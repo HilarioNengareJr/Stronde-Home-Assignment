@@ -1,0 +1,44 @@
+stronde for email
+
+#---------Header--------#
+
+stronde for email
+
+Bob Walker
+
+    #---------Drop Down--------#
+
+    bob@stronde.com
+    Time zone EST
+
+    Change password
+
+    Admin panel
+
+    Manage brands
+
+    Logout
+
+#--------Hero---------#
+
+Welcome, Bob Walker
+
+Select master template:
+
+Coca Cola brand >
+
+Unilever Brand >
+
+Waterworld Waterpark Ayla Napa >
+
+Amazon electronics >
+
+#--------Footer-------#
+
+This page has been created by Stronde Enterprise.
+
+
+
+Terms 
+
+Privacy policy
