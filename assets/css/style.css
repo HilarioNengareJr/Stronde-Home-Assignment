@@ -161,7 +161,7 @@ body {
 }
 
 .header .logo img {
-    max-width: 100px;
+    max-width: 250px;
 }
 
 .header .dropdown-menu {
@@ -295,6 +295,10 @@ html {
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
+
+.container {
+    width: ; 
+}
 
 .header .logo img {
     max-width: 300px;
