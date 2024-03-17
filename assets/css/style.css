@@ -18,9 +18,9 @@
     --stronde-blue: #1a82cc;
     --stronde-dark-grey-1: #2c2c2c;
     --stronde-dark-grey-2: #575756;
-    --stronde-dark-grey-body: #060202;
+    --stronde-dark-grey-heading: #060202;
     --stronde-white: #ffffff;
-    --stronde-light-grey: #f0f0f0;
+    --stronde-light-grey: hsl(0, 0%, 98%);
 
     /* Typography */
 
@@ -40,14 +40,19 @@
 
     /* Spacing */
 
-    --section-padding: 50px;
+    --section-padding: 60px;
 
 
     /* Shadows */
 
-    --shadow-1: 0 2px 25px hsla(0, 0%, 0%, 0.1);
-    --shadow-2: 0 8px 14px hsla(0, 0%, 0%, 0.1);
+    --shadow-1: 0 2px 25px hsla(0, 0%, 0%, 0.025);
+    --shadow-2: 0 8px 14px hsla(0, 0%, 0%, 0.04);
     --shadow-3: 0 14px 30px hsla(0, 0%, 0%, 0.05);
+
+    /* Radius */
+
+    --radius-6: 6px;
+    --radius-12: 12px;
 }
 
 
@@ -72,6 +77,14 @@ a {
     color: inherit;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1.4;
+}
+
 /* These elements should generate a line break */
 
 img {
@@ -79,12 +92,12 @@ img {
 }
 
 ion-icon {
-    pointer-events: stroke;
+    pointer-events: none;
 }
 
 html {
     font-family: var(--ff-stronde-cabin);
-    font-size: 10px;
+    font-size: 9px;
     scroll-behavior: smooth;
 }
 
@@ -108,24 +121,15 @@ body {
     padding-block: var(--section-padding);
 }
 
-.h1,
-.h2,
-.h3 {
-    color: var(--stronde-dark-grey-body);
-}
-
-.h1 {
+.section-title {
+    color: var(--stronde-dark-grey-heading);
     font-size: var(--fs-1);
 }
 
-.h2 {
+.section-subtitle {
     font-size: var(--fs-2);
 }
 
-h3 {
-    font-size: var(--fs-3);
-    font-weight: var(--fw-600);
-}
 
 .section-text {
     line-height: 1.7;
@@ -142,7 +146,8 @@ h3 {
     top: 0;
     left: 0;
     width: 100%;
-    padding-block: 20px;
+    padding-block: 15px;
+    box-shadow: var(--shadow-1);
     z-index: 5;
 }
 
@@ -150,11 +155,11 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .header .logo img {
-    max-width: 200px;
+    max-width: 250px;
 }
 
 .header .dropdown-menu {
@@ -164,15 +169,180 @@ h3 {
 .header .navbar {
     position: absolute;
     right: 0;
-    padding-inline: 60px;
+    padding-inline-end: inherit;
 }
 
-.navbar>.nav-item {
+
+.navbar .nav-item {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;
     font-size: var(--fs-4);
+    white-space: nowrap;
+    padding-inline-end: 10px;
 }
 
-.navbar .nav-item>span {
-    display: inline-block;
+.navbar .nav-item span {
+    margin-inline: 3px; 
+}
+
+.navbar .nav-item :is(.author, span:last-child) {
     vertical-align: middle;
-    margin-inline: 7px;
+}
+
+.navbar .nav-item .ion-icon {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero {
+    padding-block-start: calc(73px + var(--section-padding));
+    height: 100vh;
+}
+
+.hero .hero-content {
+    margin-inline: auto;
+}
+
+.hero .hero-list {
+    padding-block: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+.hero .brand-card {
+    display: inline flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--stronde-white);
+    padding: 20px;
+    border-radius: var(--radius-6);
+    box-shadow: var(--shadow-1);
+
+}
+
+.hero .brand-card a {
+    color: var(--stronde-blue);
+}
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+footer {
+    background-color: var(--stronde-white);
+    padding-block: 15px;
+}
+
+footer>.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+footer :is(p, .footer-link) {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+footer .footer-list {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--stronde-blue);
+    gap: 10px;
+}
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+
+
+/*  responsive for large than 480px screen */
+
+ @media (min-width: 480px) {
+/*-----------------------------------*\
+  #REUSED STYLES
+\*-----------------------------------*/
+
+    .container {
+        width: 90%;
+        margin-inline: auto;
+    }
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+    .header .nav-item{
+        position: static;
+        margin-inline-start: auto;
+    }
+
+}
+
+
+/* responsive for large than 575px screen */
+
+@media (min-width: 575px) {
+
+/*-----------------------------------*\
+  #REUSED STYLES
+\*-----------------------------------*/
+
+.container {
+    width: 90%;
+    margin-inline: auto;
+}
+
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+footer {
+    width: 100%;
+}
+} 
+
+
+/* responsive for large than 765px screen */
+
+@media (min-width:765px) {
+
+/*-----------------------------------*\
+  #RESET STYLES
+\*-----------------------------------*/
+
+html {
+    font-size: 10px;
+}
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+.container {
+    max-width: 760px;
+}
+
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+.container {
+    max-width: 760px; 
+}
+
+.header .logo img {
+    max-width: 300px;
+}
+    
 }
