@@ -16,6 +16,7 @@
     --stronde-blue: #1a82cc;
     --stronde-dark-grey-1: #2c2c2c;
     --stronde-dark-grey-2: #575756;
+    --stronde-info-grey: #888;
     --stronde-dark-grey-heading: #060202;
     --stronde-watermelon-color: #ff2e52;
     --stronde-white: #ffffff;
@@ -50,7 +51,7 @@
 
     --shadow-1: 0 2px 25px hsla(0, 0%, 0%, 0.025);
     --shadow-2: 0 2px 10px hsla(0, 0%, 0%, 0.04);
-    --shadow-3: 0 14px 30px hsla(0, 0%, 0%, 0.05);
+    --shadow-3: 0 0 30px hsla(0, 0%, 0%, 0.09);
 
     /* Radius */
 
@@ -83,6 +84,10 @@ li {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+a:is(:hover, :focus) {
+    color: var(--stronde-watermelon-color);
 }
 
 h1,
@@ -176,6 +181,22 @@ body {
     z-index: 5;
 }
 
+.header.active {
+    position: fixed;
+    top: -86px;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
 .header>.container {
     display: flex;
     justify-content: space-between;
@@ -187,46 +208,73 @@ body {
     max-width: 250px;
 }
 
-.header .dropdown-menu {
-    display: none;
-}
-
-.header .navbar {
+.navbar {
+    background-color: var(--stronde-white);
     position: absolute;
-    right: 0;
-    padding-inline-end: inherit;
+    top: 90%;
+    right: 10%;
+    padding: 30px;
+    width: 225px;
+    border-radius: var(--radius-12);
+    transform: scale(0.5);
+    transform-origin: top right;
+    pointer-events: none;
+    transition: var(--transition);
+    box-shadow: var(--shadow-3);
     visibility: hidden;
-    transition: var(--transition-1);
+    z-index: 5;
 }
 
 .header .navbar.active {
+    transform: scale(0.9);
+    opacity: 1;
     visibility: visible;
+    pointer-events: all;
 }
 
-.navbar .nav-item {
+
+.header .header-btn-group {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    font-size: var(--fs-5);
-    white-space: nowrap;
-    padding-inline: 30px;
 }
 
-header .navbar.container {
-    width: 50%;
+.header .nav-wrapper {
+    display: none;
 }
 
-.navbar .nav-item span {
-    margin-inline: 5px;
-}
 
 .navbar .nav-item .author {
     text-align: center;
 }
 
-.navbar .nav-item .ion-icon {
+.navbar .nav-item {
+    padding-block: 10px;
+}
+
+.navbar .nav-item .icon {
+    padding-inline-end: 10px;
+    vertical-align: middle;
     pointer-events: all;
     cursor: pointer;
+}
+
+.navbar .nav-item .text {
+    background-color: transparent;
+}
+
+
+.navbar .nav-item .info {
+    display: block;
+    font-size: 0.8em;
+    color: var(--stronde-info-grey);
+    margin-block-end: 2px;
+    margin-inline: 30px;
+}
+
+
+.navbar .nav-item a:is(:hover, :focus) img {
+    filter: hue-rotate(180deg);
 }
 
 .nav-toggle-btn {
@@ -235,7 +283,7 @@ header .navbar.container {
 }
 
 .line {
-    width: 15px;
+    width: 10px;
     height: 3px;
     background-color: var(--stronde-blue);
     border-radius: 5px;
@@ -243,7 +291,7 @@ header .navbar.container {
 }
 
 .line.middle {
-    width: 25px;
+    width: 20px;
 }
 
 .line.bottom {
@@ -282,45 +330,75 @@ header .navbar.container {
 
 .hero .brand-card {
     background-color: var(--stronde-white);
-    position: relative;
     padding: 40px;
-    display: inline flex;
-    justify-content: space-between;
-    width: 100%;
     border-radius: var(--radius-6);
     box-shadow: var(--shadow-2);
 }
 
-
-.hero .brand-card .brand a {
-    position: relative;
-    color: var(--stronde-blue);
-    
+.hero .brand-card>a {
+    display: inline flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.hero .brand-card .brand a:is(:hover, :focus) {
+
+.hero .brand-card a .brand {
+    position: relative;
+    color: var(--stronde-blue);
+
+}
+
+.hero .brand-card a:is(:hover, :focus) span {
     color: var(--stronde-watermelon-color);
 }
 
-
-.hero .brand-card .brand a::after {
+.hero .brand-card a .brand::after {
     --scaleY: scaleY(0);
 
     content: "";
     position: absolute;
     vertical-align: middle;
-    bottom: -12px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%) var(--scaleY);
     transform-origin: bottom;
-    width: 3px;
+    width: 2px;
     height: 10px;
     background: linear-gradient(to top, var(--stronde-watermelon-color), transparent);
     transition: var(--transition);
-  }
+}
 
-  .hero .brand-card .brand a:hover::after,
-  .hero .brand-card .brand a:focus::after { --scaleY: scaleY(1); }
+.hero .brand-card a:hover .brand::after,
+.hero .brand-card a:focus .brand::after {
+    --scaleY: scaleY(1);
+}
+
+/***
+
+.hero .brand-card::before,
+.hero .brand-card::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  background: var(--stronde-white);
+  transition: var(--transition);
+}
+
+.hero .brand-card::before {
+  width: 1px;
+  height: 50%;
+}
+
+.hero .brand-card::after {
+  width: 50%;
+  height: 1px;
+}
+
+.hero .brand-card:hover::before,
+.hero .brand-card:hover::after { background: var(--stronde-watermelon-color); }
+
+***/
 
 
 /*-----------------------------------*\
@@ -338,8 +416,8 @@ footer>.container {
     align-items: center;
 }
 
-footer:is(p, .footer-link) {
-    font-size: 12px;
+footer .container :is(p, .footer-link) {
+    font-size: var(--fs-9) !important;
     white-space: nowrap;
 }
 
@@ -381,7 +459,7 @@ footer .footer-list {
     }
 
     .hero .brand-card {
-        padding: 25px;
+        padding: 20px;
     }
 
 }
@@ -394,21 +472,39 @@ footer .footer-list {
         padding-block: 10px;
     }
 
-    .header-btn {
+    .navbar {
+        right: 9.5%;
+    }
+
+    .nav-toggle-btn {
         display: none;
     }
 
-    .header .navbar {
-        visibility: visible;
+    .header .nav-wrapper {
+        display: flex;
+        align-items: center;
+        font-size: var(--fs-5);
+        white-space: nowrap;
     }
 
-    .navbar .nav-item span:last-child {
-        margin-inline-end: 40px;
+
+    .header .nav-wrapper span {
+        margin-inline: 5px;
     }
+
 
     /* * HERO * */
 
     .section.hero>.container {
         width: 50%;
+    }
+}
+
+
+/* responsive for large than 992px screen */
+
+@media (min-width: 992px) {
+    .navbar {
+        right: 8%;
     }
 }

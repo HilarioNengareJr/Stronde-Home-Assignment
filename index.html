@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stronde for Email</title>
@@ -10,157 +9,186 @@
         favicon
     -->
 
-    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/png" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.png"
+      type="image/png"
+    />
 
     <!--
         custom css link
     -->
 
     <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
+  </head>
 
-<body>
-    <!--
-        Header
-    -->
+  <body>
 
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="./assets/images/logo.png" alt="Stronde for Email" />
-            </div>
-            <nav class="navbar container">
-                <ul>
-                    <li class="nav-item">
-                        <span>
-                            <img src="./assets/images/account.png" alt="User Account" />
-                        </span>
-                        <span class="author"> Bob Walker </span>
-                        <span class="ion-icon" title="Open dropdown menu"><ion-icon
-                                name="chevron-up-outline"></ion-icon></span>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header-btn">
-                <button class="nav-toggle-btn">
-                    <span class="line top"></span>
-                    <span class="line middle"></span>
-                    <span class="line bottom"></span>
-                </button>
-            </div>
 
-            <!--
-            Dropdown Menu
-        -->
+    <!-- Header -->
 
-            <div class="dropdown-menu">
-                <ul>
-                    <li class="list-item">
-                        <a href="#" class="dropdown-item">
-                            <span><img src="./assets/images/email.png" alt="Email" /></span>bob@stronde.com
-                            <span> Time zone EST </span>
-                        </a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="dropdown-item">
-                            <span><img src="./assets/images/password.png" alt="Password" /></span>Change password
-                        </a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="dropdown-item">
-                            <span><img src="./assets/images/admin.png" alt="Admin" /></span>
-                            Admin panel
-                        </a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="dropdown-item"><span><img src="./assets/images/management.png"
-                                    alt="Brands" /></span>
-                            Manage brands
-                        </a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="dropdown-item">
-                            <span><img src="./assets/images/logOut.png" alt="Log out" /></span>Logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <header class="header" data-header>
+      <div class="container">
+        <div class="logo">
+          <img src="./assets/images/logo.png" alt="Stronde for Email" />
         </div>
+
+
+
+        <!-- Navigation bar -->
+
+        <nav class="navbar" data-navbar>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" target="_blank" data-nav-link>
+                        <img src="./assets/images/email.png" alt="Email" class="icon" />
+                        <span class="text">bob&commat;stronde.com</span>
+                        <span class="info">Time zone: EST</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" target="_blank" data-nav-link>
+                        <img src="./assets/images/password.png" alt="Password" class="icon" />
+                        <span class="text">Change password</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" target="_blank" data-nav-link>
+                        <img src="./assets/images/admin.png" alt="Admin" class="icon" />
+                        <span class="text">Admin panel</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" target="_blank" data-nav-link>
+                        <img src="./assets/images/management.png" alt="Brands" class="icon" />
+                        <span class="text">Manage brands</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" target="_blank" data-nav-link>
+                        <img src="./assets/images/logOut.png" alt="Log out" class="icon" />
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+
+        <!-- Header button group -->
+
+        <div class="header-btn-group container" >
+          <button class="nav-toggle-btn" data-nav-toggle-btn>
+            <span class="line top"></span>
+            <span class="line middle"></span>
+            <span class="line bottom"></span>
+          </button>
+
+          <div class="nav-wrapper">
+            <span>
+              <img src="./assets/images/account.png" alt="User Account" />
+            </span>
+            <span class="author"> Bob Walker </span>
+            <span class="ion-icon" title="Open dropdown menu">
+                <ion-icon name="chevron-up-outline">
+                </ion-icon
+            ></span>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>
-        <article>
-            <!--  Hero  -->
-            <section class="section hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1 class="section-title">Welcome, Bob Walker</h1>
-                        <h3 class="setion-subtitle">Select master template:</h3>
-                        <ul class="hero-list">
-                            <li>
-                                <div class="brand-card">
-                                    <div class="brand">
-                                        <a href="#">Coca Cola Brand</a>
-                                    </div>
+      <article>
 
-                                    <span class="ion-icon">
-                                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="brand-card">
-                                    <div class="brand">
-                                        <a href="#"> Unilever Brand </a>
-                                    </div>
-                                    <span class="ion-icon">
-                                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="brand-card">
-                                    <div class="brand"><a href="#">
-                                            Waterworld Waterpark Ayla Napa
-                                        </a></div>
-                                    <span class="ion-icon">
-                                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="brand-card">
-                                    <div class="brand"><a href="#"> Amazon electronics </a></div>
-                                    <span class="ion-icon">
-                                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
 
-        </article>
+        <!--  Hero  -->
+
+        <section class="section hero">
+          <div class="container">
+            <div class="hero-content">
+              <h1 class="section-title">Welcome, Bob Walker</h1>
+              <h3 class="setion-subtitle">Select master template:</h3>
+              <ul class="hero-list">
+                <li>
+                  <div class="brand-card">
+                    <a href="#" target="_blank">
+                      <span class="brand">Coca Cola Brand</span>
+
+                      <span class="ion-icon">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                      </span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="brand-card">
+                    <a href="#" target="_blank">
+                      <span class="brand">Unilever Brand</span>
+                      <span class="ion-icon">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                      </span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="brand-card">
+                    <a href="#" target="_blank">
+                      <span class="brand">Waterworld Waterpark Ayla Napa</span>
+                      <span class="ion-icon">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                      </span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="brand-card">
+                    <a href="#" target="_blank">
+                      <span class="brand">Amazon electronics</span>
+                      <span class="ion-icon">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                      </span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </article>
     </main>
 
+
     <!-- Footer -->
+
     <footer class="footer">
-        <div class="container">
-            <p>This page has been created by Stronde Enterprise.</p>
-            <ul class="footer-list">
-                <li>
-                    <a href="#" class="footer-link"> Terms </a>
-                </li>
-                <li>
-                    <a href="#" class="footer-link"> Privacy policy </a>
-                </li>
-            </ul>
-        </div>
+      <div class="container">
+        <p>This page has been created by Stronde Enterprise.</p>
+        <ul class="footer-list">
+          <li>
+            <a href="#" target="_blank" class="footer-link"> Terms </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" class="footer-link"> Privacy policy </a>
+          </li>
+        </ul>
+      </div>
     </footer>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
 
+       <!-- Ionicons -->
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+
+    <!-- Javascripts -->
+    <script src="./assets/js/script.js" defer></script>
+
+  </body>
 </html>
