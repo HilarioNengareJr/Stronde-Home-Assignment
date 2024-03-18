@@ -238,6 +238,7 @@ body {
 footer {
     background-color: var(--stronde-white);
     padding-block: 15px;
+    bottom: 0;
 }
 
 footer>.container {
