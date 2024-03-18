@@ -2,79 +2,80 @@
   #style.css
 \*-----------------------------------*/
 
-
 /* Cabin font import */
 
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
 
 :root {
+  /* Colors */
 
-    /* Colors */
+  --stronde-blue: #1a82cc;
+  --stronde-dark-grey-1: #2c2c2c;
+  --stronde-dark-grey-2: #575756;
+  --stronde-dark-grey-heading: #060202;
+  --stronde-white: #ffffff;
+  --stronde-light-grey: hsl(0, 0%, 98%);
 
-    --stronde-blue: #1a82cc;
-    --stronde-dark-grey-1: #2c2c2c;
-    --stronde-dark-grey-2: #575756;
-    --stronde-dark-grey-heading: #060202;
-    --stronde-white: #ffffff;
-    --stronde-light-grey: hsl(0, 0%, 98%);
+  /* Typography */
 
-    /* Typography */
+  --ff-stronde-cabin: "Cabin", sans-serif;
 
-    --ff-stronde-cabin: "Cabin", sans-serif;
+  --fs-1: 32px;
+  --fs-2: 20px;
+  --fs-3: 19px;
+  --fs-4: 18px;
+  --fs-5: 16px;
+  --fs-6: 15px;
+  --fs-7: 14px;
+  --fs-8: 13px;
+  --fs-9: 12px;
+  --fs-10: 11px;
 
-    --fs-1: 3rem;
-    --fs-2: 2.7rem;
-    --fs-3: 2.2rem;
-    --fs-4: 1.8rem;
-    --fs-5: 1.6rem;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-900: 900;
 
-    --fw-400: 400;
-    --fw-500: 500;
-    --fw-600: 600;
-    --fw-700: 700;
-    --fw-900: 900;
+  /* Spacing */
 
-    /* Spacing */
+  --section-padding: 60px;
 
-    --section-padding: 60px;
+  /* Shadows */
 
+  --shadow-1: 0 2px 25px hsla(0, 0%, 0%, 0.025);
+  --shadow-2: 0 2px 10px hsla(0, 0%, 0%, 0.04);
+  --shadow-3: 0 14px 30px hsla(0, 0%, 0%, 0.05);
 
-    /* Shadows */
+  /* Radius */
 
-    --shadow-1: 0 2px 25px hsla(0, 0%, 0%, 0.025);
-    --shadow-2: 0 8px 14px hsla(0, 0%, 0%, 0.04);
-    --shadow-3: 0 14px 30px hsla(0, 0%, 0%, 0.05);
-
-    /* Radius */
-
-    --radius-6: 6px;
-    --radius-12: 12px;
+  --radius-6: 6px;
+  --radius-12: 12px;
 }
 
-
 /*-----------------------------------*\
-  #RESET STYLES
+  #RESET 
 \*-----------------------------------*/
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 h1,
@@ -82,119 +83,127 @@ h2,
 h3,
 h4,
 h5 {
-    line-height: 1.4;
+  line-height: 1.4;
 }
 
-/* These elements should generate a line break */
+h1 {
+    font-size: var(--fs-1);
+}
+
+h3 { font-size: var(--fs-2); }
 
 img {
-    height: auto;
+  height: auto;
 }
 
 ion-icon {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 html {
-    font-family: var(--ff-stronde-cabin);
-    font-size: 10px;
-    scroll-behavior: smooth;
+  font-family: var(--ff-stronde-cabin);
+  line-height: 1.3;
+  scroll-behavior: smooth;
+  height: 100%;
 }
-
 
 body {
-    background-color: var(--stronde-light-grey);
-    font-size: var(--fs-5);
-    color: var(--stronde-dark-grey-2);
+  background-color: var(--stronde-light-grey);
+  font-size: var(--fs-7);
+  color: var(--stronde-dark-grey-2);
+  height: 100%;
 }
 
+
+::-webkit-scrollbar { width: 10px; }
 
 /*-----------------------------------*\
   #REUSED STYLES
 \*-----------------------------------*/
 
 .container {
-    width: 90%;
-    margin-inline: auto;
-    padding-inline: 20px;
+  width: 90%;
+  margin-inline: auto;
+  padding-inline: 20px;
 }
 
 .section {
-    padding-block: var(--section-padding);
+  padding-block: var(--section-padding);
 }
 
 .section-title {
-    color: var(--stronde-dark-grey-heading);
-    font-size: var(--fs-1);
+  color: var(--stronde-dark-grey-heading);
+  font-size: var(--fs-1);
 }
 
 .section-subtitle {
-    font-size: var(--fs-2);
+  font-size: var(--fs-2);
 }
-
 
 .section-text {
-    line-height: 1.7;
+  line-height: 1.7;
 }
-
 
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
 
 .header {
-    background-color: var(--stronde-white);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-block: 15px;
-    box-shadow: var(--shadow-1);
-    z-index: 5;
+  background-color: var(--stronde-white);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 10px;
+  box-shadow: var(--shadow-1);
+  z-index: 5;
 }
 
-.header>.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
 .header .logo img {
-    max-width: 250px;
+  max-width: 250px;
 }
 
 .header .dropdown-menu {
-    display: none;
+  display: none;
 }
 
 .header .navbar {
-    position: absolute;
-    right: 0;
-    padding-inline-end: inherit;
+  position: absolute;
+  right: 0;
+  padding-inline-end: inherit;
 }
 
-
 .navbar .nav-item {
-    display: flex;
-    align-items: center; 
-    justify-content: flex-end;
-    font-size: var(--fs-4);
-    white-space: nowrap;
-    padding-inline-end: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: var(--fs-5);
+  white-space: nowrap;
+  padding-inline: 30px;
+}
+
+header .navbar.container {
+    width: 50%;
 }
 
 .navbar .nav-item span {
-    margin-inline: 3px; 
+  margin-inline: 5px;
 }
 
-.navbar .nav-item :is(.author, span:last-child) {
-    vertical-align: middle;
+.navbar .nav-item .author {
+  text-align: center;
 }
 
 .navbar .nav-item .ion-icon {
-    pointer-events: all;
-    cursor: pointer;
+  pointer-events: all;
+  cursor: pointer;
 }
 
 /*-----------------------------------*\
@@ -202,33 +211,32 @@ body {
 \*-----------------------------------*/
 
 .hero {
-    padding-block-start: calc(73px + var(--section-padding));
-    height: 100vh;
+  padding-block-start: calc(73px + var(--section-padding));
 }
 
 .hero .hero-content {
-    margin-inline: auto;
+  margin-inline: auto;
 }
 
 .hero .hero-list {
-    padding-block: 20px;
-    display: grid;
-    gap: 10px;
+  padding-block: 20px;
+  display: grid;
+  gap: 10px;
 }
 
 .hero .brand-card {
+    background-color: var(--stronde-white);
+    position: relative;
+    padding: 40px;
     display: inline flex;
     justify-content: space-between;
     width: 100%;
-    background-color: var(--stronde-white);
-    padding: 20px;
     border-radius: var(--radius-6);
-    box-shadow: var(--shadow-1);
-
+    box-shadow: var(--shadow-2);
 }
 
 .hero .brand-card a {
-    color: var(--stronde-blue);
+  color: var(--stronde-blue);
 }
 
 /*-----------------------------------*\
@@ -236,80 +244,75 @@ body {
 \*-----------------------------------*/
 
 footer {
-    background-color: var(--stronde-white);
-    padding-block: 15px;
-    bottom: 0;
+  background-color: var(--stronde-white);
+  padding-block: 15px;
 }
 
-footer>.container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
+footer > .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
 
 footer :is(p, .footer-link) {
-    font-size: 12px;
-    white-space: nowrap;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 footer .footer-list {
-    display: flex;
-    justify-content: flex-end;
-    color: var(--stronde-blue);
-    gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--stronde-blue);
+  gap: 10px;
 }
-
-
 
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
 
-
-
-
 /* responsive for large than 765px screen */
 
-@media (min-width:765px) {
+@media (min-width: 765px) {
 
-/*-----------------------------------*\
-  #HEADER
-\*-----------------------------------*/
+  /* * CUSTOM PROPERTY * */
+  :root {
 
-.header .logo img {
+    /* typography */
+
+    --fs-1: 38px;
+    --fs-7: 15px;
+
+  }
+
+  /* * HEADER * */
+
+  .header .logo img {
     max-width: 300px;
-}
+  }
 
+  /* * HERO * */
 
-/*-----------------------------------*\
-  #HERO
-\*-----------------------------------*/
-
-.section.hero > .container {
+  .section.hero > .container {
     width: 70%;
-}
-    
-}
+  }
 
+  .hero .brand-card {
+    padding: 25px;
+  }
 
+}
 
 /* responsive for large than 992px screen */
 @media (min-width: 992px) {
+  /* * HEADER * */
 
-/*-----------------------------------*\
-  #HEADER
-\*-----------------------------------*/
+  .navbar .nav-item span:last-child {
+    margin-inline-end: 40px;
+  }
 
-.navbar .nav-item span:last-child{
-    margin-inline-end: inherit;
-}
+  /* * HERO * */
 
-/*-----------------------------------*\
-  #HERO
-\*-----------------------------------*/
-
-.section.hero > .container {
+  .section.hero > .container {
     width: 50%;
-}
-
+  }
 }
