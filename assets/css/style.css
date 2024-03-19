@@ -150,7 +150,6 @@ body {
 .container {
     width: 90%;
     margin-inline: auto;
-    padding-inline: 20px;
 }
 
 .section {
@@ -278,8 +277,8 @@ body {
 }
 
 
-.navbar .nav-item a:is(:hover, :focus) img.icon {
-    filter: hue-rotate(180deg) 
+.navbar .nav-item a:is(:hover, :focus) img{
+    filter: invert(1); 
 }
 
 
