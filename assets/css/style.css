@@ -218,7 +218,7 @@ body {
     position: absolute;
     top: 90%;
     right: 10%;
-    padding: 30px;
+    padding: 10px 30px;
     width: 225px;
     border-radius: var(--radius-12);
     transform: scale(0.5);
