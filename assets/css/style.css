@@ -139,6 +139,10 @@ body {
     width: 10px;
 }
 
+#commat {
+    font-family: helvetica;
+}
+
 /*-----------------------------------*\
   #REUSED STYLES
 \*-----------------------------------*/
@@ -183,7 +187,7 @@ body {
 
 .header.active {
     position: fixed;
-    top: -86px;
+    top: -89px;
     animation: slideIn 0.5s ease-out forwards;
 }
 
@@ -206,6 +210,7 @@ body {
 
 .header .logo img {
     max-width: 250px;
+    cursor: pointer;
 }
 
 .navbar {
@@ -275,6 +280,15 @@ body {
 
 .navbar .nav-item a:is(:hover, :focus) img {
     filter: hue-rotate(180deg);
+}
+
+span[title="Expand"]{
+    transition: transform 0.3s ease-in-out;
+}
+
+
+span[title="Expand"].active {
+    transform: rotate(180deg);
 }
 
 .nav-toggle-btn {
@@ -466,11 +480,13 @@ footer .footer-list {
 
 /* responsive for large than 992px screen */
 @media (min-width: 992px) {
+
     /* * HEADER * */
 
     .header {
         padding-block: 10px;
     }
+
 
     .navbar {
         right: 9.5%;
@@ -504,7 +520,14 @@ footer .footer-list {
 /* responsive for large than 992px screen */
 
 @media (min-width: 992px) {
+
+    /* * HEADER * */
+
     .navbar {
         right: 8%;
+    }
+
+    .header .navbar.active {
+        transform: scale(1);
     }
 }

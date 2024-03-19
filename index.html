@@ -30,7 +30,9 @@
     <header class="header" data-header>
       <div class="container">
         <div class="logo">
-          <img src="./assets/images/logo.png" alt="Stronde for Email" />
+          <a href="#" target="_blank">
+            <img src="./assets/images/logo.png" alt="Stronde for Email" />
+          </a>
         </div>
 
 
@@ -38,11 +40,14 @@
         <!-- Navigation bar -->
 
         <nav class="navbar" data-navbar>
+          
+          <div class="divider">
+            
             <ul class="nav-list">
                 <li class="nav-item">
                     <a href="#" target="_blank" data-nav-link>
                         <img src="./assets/images/email.png" alt="Email" class="icon" />
-                        <span class="text">bob&commat;stronde.com</span>
+                        <span class="text">bob<span id="commat">&commat;</span>stronde.com</span>
                         <span class="info">Time zone: EST</span>
                     </a>
                 </li>
@@ -83,12 +88,12 @@
             <span class="line bottom"></span>
           </button>
 
-          <div class="nav-wrapper">
+          <div class="nav-wrapper" data-nav-toggle-btn>
             <span>
               <img src="./assets/images/account.png" alt="User Account" />
             </span>
             <span class="author"> Bob Walker </span>
-            <span class="ion-icon" title="Open dropdown menu">
+            <span class="ion-icon" title="Expand" data-expand-btn>
                 <ion-icon name="chevron-up-outline">
                 </ion-icon
             ></span>
@@ -108,48 +113,8 @@
             <div class="hero-content">
               <h1 class="section-title">Welcome, Bob Walker</h1>
               <h3 class="setion-subtitle">Select master template:</h3>
-              <ul class="hero-list">
-                <li>
-                  <div class="brand-card">
-                    <a href="#" target="_blank">
-                      <span class="brand">Coca Cola Brand</span>
-
-                      <span class="ion-icon">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                      </span>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="brand-card">
-                    <a href="#" target="_blank">
-                      <span class="brand">Unilever Brand</span>
-                      <span class="ion-icon">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                      </span>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="brand-card">
-                    <a href="#" target="_blank">
-                      <span class="brand">Waterworld Waterpark Ayla Napa</span>
-                      <span class="ion-icon">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                      </span>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="brand-card">
-                    <a href="#" target="_blank">
-                      <span class="brand">Amazon electronics</span>
-                      <span class="ion-icon">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                      </span>
-                    </a>
-                  </div>
-                </li>
+              <ul class="hero-list" data-hero-list>
+               <!-- JavaScript generated objects -->
               </ul>
             </div>
           </div>
