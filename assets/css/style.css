@@ -216,7 +216,7 @@ body {
     background-color: var(--stronde-white);
     position: absolute;
     top: 90%;
-    right: 10%;
+    right: 5%;
     padding: 10px 30px;
     width: 225px;
     border-radius: var(--radius-12);
@@ -276,10 +276,11 @@ body {
     margin-inline: 30px;
 }
 
-
+/** ommited
 .navbar .nav-item a:is(:hover, :focus) img{
-    filter: invert(1); 
+    filter: hue-rotate(180deg);
 }
+*/
 
 
 
@@ -345,7 +346,7 @@ span[title="Expand"].active {
 
 .hero .brand-card {
     background-color: var(--stronde-white);
-    padding: 40px;
+    padding: 50px;
     border-radius: var(--radius-6);
     box-shadow: var(--shadow-2);
 }
@@ -400,7 +401,7 @@ footer {
 
 footer>.container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     align-items: center;
 }
 
@@ -411,7 +412,6 @@ footer .container :is(p, .footer-link) {
 
 footer .footer-list {
     display: flex;
-    justify-content: flex-end;
     color: var(--stronde-blue);
     gap: 10px;
 }
@@ -461,11 +461,6 @@ footer .footer-list {
         padding-block: 10px;
     }
 
-
-    .navbar {
-        right: 9.5%;
-    }
-
     .nav-toggle-btn {
         display: none;
     }
@@ -489,20 +484,19 @@ footer .footer-list {
     .section.hero>.container {
         width: 50%;
     }
-}
 
 
-/* responsive for large than 992px screen */
+     /* * FOOTER * */
 
-@media (min-width: 992px) {
-
-    /* * HEADER * */
-
-    .navbar {
-        right: 8%;
+    footer>.container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
     }
 
-    .header .navbar.active {
-        transform: scale(1);
+    footer .footer-list {
+        justify-content: flex-end;
     }
 }
+
+

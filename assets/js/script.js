@@ -26,12 +26,61 @@ for (let i = 0; i < navToggleBtns.length; i++) {
     });
 }
 
+/**
+ * if need be to close nav bar when link is clicked? activate this part
+ */
+
+/**
+ 
 for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener("click", function () {
         navbar.classList.remove("active");
         this.classList.remove("active");
         expandBtn.classList.remove("active");
     })
+}
+
+ **/
+
+
+/**
+ * navbar icons handling
+ */
+
+const iconsHoverUrls = ['./assets/images/IconsHovered/emailHovered.png', './assets/images/IconsHovered/passwordHovered.png', './assets/images/IconsHovered/adminHovered.png', './assets/images/IconsHovered/managementHovered.png', './assets/images/logOut.png'];
+const iconsNormalUrls = ['./assets/images/email.png', './assets/images/password.png', './assets/images/admin.png', './assets/images/management.png', './assets/images/IconsHovered/logOutHovered.png'];
+
+for (let i = 0; i < navLinks.length; i++) {
+
+    let isFocused = false;
+
+    navLinks[i].addEventListener('mouseover', onMouseOver);
+    navLinks[i].addEventListener('mouseout', onMouseOut);
+    navLinks[i].addEventListener('focus', onFocus);
+    navLinks[i].addEventListener('blur', onBlur);
+
+    function onFocus() {
+        this.querySelector('img').src = iconsHoverUrls[i];
+        isFocused = true;
+    }
+
+    function onBlur() {
+        isFocused = false;
+        onMouseOut.call(this); 
+    }
+
+    function onMouseOver() {
+        if (!isFocused) {
+            this.querySelector('img').src = iconsHoverUrls[i];
+        }
+    }
+
+    function onMouseOut() {
+        if (!isFocused) {
+            this.querySelector('img').src = iconsNormalUrls[i];
+        }
+    }
+
 }
 
 
